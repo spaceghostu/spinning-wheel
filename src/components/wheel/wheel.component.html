@@ -1,0 +1,56 @@
+<div class="wheel-container">
+  <svg [attr.width]="width" [attr.height]="height">
+    <!-- The circle (wheel) at center (150, 150), radius 140 -->
+    <circle
+      [attr.cx]="150"
+      [attr.cy]="150"
+      [attr.r]="140"
+      fill="#fdd835"
+      stroke="#000"
+      stroke-width="2"
+    ></circle>
+
+    <g
+      [attr.transform]="
+        'translate(' +
+        width / 2 +
+        ',' +
+        height / 2 +
+        ') rotate(' +
+        currentRotation +
+        ')'
+      "
+    >
+      @for (seg of segments; track i; let i = $index) {
+        <path
+          [attr.d]="getSegmentPath(i)"
+          [attr.fill]="getSegmentColor(i)"
+          stroke="#333"
+          stroke-width="1"
+        ></path>
+
+        <text
+          [attr.transform]="getTextTransform(i)"
+          fill="#000"
+          font-size="12"
+          text-anchor="middle"
+          alignment-baseline="middle"
+        >
+          {{ seg }}
+        </text>
+      }
+    </g>
+    <!-- The pointer on top. Triangle above the circle. -->
+
+    <polygon
+      fill="red"
+      stroke="black"
+      stroke-width="1"
+      points="
+      140,0
+      160,0
+      150,20
+    "
+    ></polygon>
+  </svg>
+</div>

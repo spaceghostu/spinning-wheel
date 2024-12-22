@@ -1,0 +1,11 @@
+.wheel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  display: block;
+  margin-bottom: 10px;
+}
