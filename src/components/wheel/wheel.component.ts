@@ -99,9 +99,9 @@ export class WheelComponent implements OnChanges {
   private _segmentAngles: number[] = []; // Computed angles for each segment
 
   private _spinDuration = 7000;
-  private _x1 = 0;
+
+  // animation easing (cubic-bezier) coordinates
   private _y1 = 0;
-  private _x2 = 0.58;
   private _y2 = 1.0;
 
   private startRotation = 0;
