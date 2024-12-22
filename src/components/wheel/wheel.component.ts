@@ -9,9 +9,6 @@ import {
 import { polarToCartesian } from '../../util/polarToCartesian';
 import { cubicBezierY } from '../../util/cubicBezier';
 
-/**
- * A configuration interface for the WheelComponent.
- */
 export interface WheelSegmentConfig {
   /**
    * An array of [segmentLabel, segmentSize] tuples.
@@ -37,8 +34,7 @@ export interface WheelSegmentConfig {
 }
 
 /**
- * Represents a spinning wheel component that can have segments of varying sizes,
- * and supports a time-based spin with cubic-bezier easing.
+ * A spinning wheel component that can have segments of varying sizes.
  *
  * @remarks
  * - The `config` property controls segments and spin settings.
@@ -51,17 +47,10 @@ export interface WheelSegmentConfig {
   styleUrls: ['./wheel.component.scss'],
 })
 export class WheelComponent implements OnChanges {
-  /**
-   * Combined configuration, including segments and spin properties.
-   */
   @Input() public config: WheelSegmentConfig = {
     segments: [],
     spinDuration: 7000,
   };
-
-  /**
-   * An output event that emits the winning segment label when the spin completes.
-   */
   @Output() public spinEnd: EventEmitter<string> = new EventEmitter<string>();
 
   /**
@@ -94,11 +83,11 @@ export class WheelComponent implements OnChanges {
    * Internal Fields
    * -------------------------------------------------- */
 
-  segments: string[] = []; // Extracted segment labels
-  private segmentSizes: number[] = []; // Extracted segment sizes
-  private _segmentAngles: number[] = []; // Computed angles for each segment
+  segments: string[] = [];
+  private segmentSizes: number[] = [];
+  private _segmentAngles: number[] = [];
 
-  private _spinDuration = 7000;
+  private _spinDuration = 7 * 1000; // 7 seconds
 
   // animation easing (cubic-bezier) coordinates
   private _y1 = 0;

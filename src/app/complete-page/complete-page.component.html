@@ -3,7 +3,7 @@
   <p>Your have won</p>
   <p class="prize-text">{{ prize() }}</p>
   <nav class="buttons">
-    <app-button (click)="goToSpinPage()" text="Spin Again" variant="solid" />
-    <app-button (click)="goToWelcomePage()" text="Go to Welcome Page" />
+    <a routerLink="/spin"><app-button text="Spin Again" variant="solid" /></a>
+    <a routerLink="/welcome"><app-button text="Go to Welcome Page" /></a>
   </nav>
 </div>
