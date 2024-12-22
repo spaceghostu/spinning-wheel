@@ -1,7 +1,7 @@
 <div class="complete-page-root">
   <h1>Well done!</h1>
   <p>Your have won</p>
-  <p class="prize-text">{{ prize }}</p>
+  <p class="prize-text">{{ prize() }}</p>
   <nav class="buttons">
     <app-button (click)="goToSpinPage()" text="Spin Again" variant="solid" />
     <app-button (click)="goToWelcomePage()" text="Go to Welcome Page" />

@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonComponent } from '../../components/button/button.component';
+import { Observable } from 'rxjs';
+import { Store } from '@ngxs/store';
+import { WheelState } from '../../store/wheel/wheel.state';
 
 @Component({
   selector: 'app-complete-page',
@@ -9,9 +12,14 @@ import { ButtonComponent } from '../../components/button/button.component';
   styleUrl: './complete-page.component.scss',
 })
 export class CompletePageComponent {
-  prize: string = 'Car';
+  prize: Signal<string | null>;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private store: Store,
+  ) {
+    this.prize = this.store.selectSignal(WheelState.getPrize);
+  }
 
   goToSpinPage(): void {
     this.router.navigate(['/spin']);

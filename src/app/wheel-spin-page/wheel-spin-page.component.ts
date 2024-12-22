@@ -6,6 +6,8 @@ import {
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../components/button/button.component';
 import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import { SetPrize } from '../../store/wheel/wheel.actions';
 
 @Component({
   selector: 'app-wheel-spin-page',
@@ -16,7 +18,10 @@ import { Router } from '@angular/router';
 export class WheelSpinPageComponent {
   @ViewChild(WheelComponent) wheelRef!: WheelComponent;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private store: Store,
+  ) {}
 
   public spinRandom(): void {
     this.wheelRef.spin();
@@ -25,26 +30,27 @@ export class WheelSpinPageComponent {
   public spinToSegment(segment: string): void {
     this.wheelRef.spin(segment);
   }
-  title = 'spinning-wheel';
 
   wheelConfig: WheelSegmentConfig = {
     segments: [
       ['Car', 1],
       ['Cellphone', 3],
-      ['Smarties', 3],
-      ['Toaster', 4],
+      ['Smarties', 5],
+      ['Toaster', 3],
       ['Car', 1],
       ['Cellphone', 3],
-      ['Smarties', 3],
-      ['Toaster', 4],
+      ['Smarties', 5],
+      ['Toaster', 3],
     ],
     spinDuration: 5000,
   };
 
   handleSpinEnd(segment: string): void {
-    setTimeout(() => {
-      this.router.navigate(['/complete']);
-    }, 1000);
+    this.store.dispatch(new SetPrize(segment)).subscribe(() => {
+      setTimeout(() => {
+        this.router.navigate(['/complete']);
+      }, 1000);
+    });
 
     console.log(`Spinning wheel landed on ${segment}`);
   }

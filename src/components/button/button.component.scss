@@ -5,7 +5,6 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
   width: 100%;
 }
 
@@ -17,10 +16,6 @@
 }
 .large {
   font-size: 20px;
-}
-
-.button:hover {
-  background-color: #0056b3;
 }
 
 .primary {
@@ -35,7 +30,6 @@
   background-color: transparent;
   color: var(--primary-color);
   &:hover {
-    background-color: var(--primary-color);
     color: #fff;
   }
 }
@@ -53,6 +47,9 @@
 .solid {
   background-color: var(--primary-color);
   color: #fff;
+  &:hover {
+    background-color: #0056b3;
+  }
 }
 
 .disabled {
