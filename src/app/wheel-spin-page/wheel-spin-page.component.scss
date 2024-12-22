@@ -1,0 +1,21 @@
+.wheel-spin-page-root {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 48px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 16px;
+}
+
+// tablet and up
+@media (min-width: 768px) {
+  .wheel-spin-page-root {
+    gap: 64px;
+    flex-direction: row;
+  }
+}

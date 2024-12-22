@@ -1,0 +1,19 @@
+<div class="wheel-spin-page-root">
+  <div class="buttons">
+    <app-button (click)="spinRandom()" text="Spin Random" variant="solid" />
+    <app-button
+      (click)="spinToSegment('Smarties')"
+      text="Spin to smarties"
+      variant="outlined"
+    />
+    <app-button
+      (click)="spinToSegment('Car')"
+      text="Spin to car"
+      variant="outlined"
+    />
+  </div>
+  <app-wheel
+    [config]="wheelConfig"
+    (spinEnd)="handleSpinEnd($event)"
+  ></app-wheel>
+</div>
