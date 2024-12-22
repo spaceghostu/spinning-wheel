@@ -30,7 +30,7 @@
   background-color: transparent;
   color: var(--primary-color);
   &:hover {
-    color: #fff;
+    color: var(--primary-alt);
   }
 }
 
@@ -40,15 +40,15 @@
   border: 1px solid var(--primary-color);
   &:hover {
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--text-color-inverted);
   }
 }
 
 .solid {
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--text-color-inverted);
   &:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-alt);
   }
 }
 

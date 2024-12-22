@@ -2,9 +2,11 @@
 
 :root {
   --primary-color: #007bff;
+  --primary-alt: #0056b3;
   --secondary-color: #6c757d;
   --background-color: #f8f9fa;
   --text-color: #000;
+  --text-color-inverted: #fff;
 
   --wheel-segment-even-color: #fdd835;
   --wheel-segment-odd-color: #ffa726;
@@ -14,8 +16,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-color: #49a1ff;
+    --primary-alt: #6fb5ff;
     --background-color: #000000;
     --text-color: #fff;
+    --text-color-inverted: #000000;
 
     --wheel-segment-even-color: #fdd835;
     --wheel-segment-odd-color: #ffa726;
