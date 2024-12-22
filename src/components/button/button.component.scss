@@ -40,13 +40,13 @@
   border: 1px solid var(--primary-color);
   &:hover {
     background-color: var(--primary-color);
-    color: var(--text-color-inverted);
+    color: white;
   }
 }
 
 .solid {
   background-color: var(--primary-color);
-  color: var(--text-color-inverted);
+  color: white;
   &:hover {
     background-color: var(--primary-alt);
   }
