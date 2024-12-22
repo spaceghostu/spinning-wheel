@@ -186,7 +186,9 @@ export class WheelComponent implements OnChanges {
    */
   public getSegmentColor(index: number): string {
     // Simple alternating color example
-    return index % 2 === 0 ? '#fdd835' : '#ffa726';
+    return index % 2 === 0
+      ? 'var(--wheel-segment-even-color)'
+      : 'var(--wheel-segment-odd-color)';
   }
 
   /**

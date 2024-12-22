@@ -1,0 +1,10 @@
+<button
+  class="button"
+  [ngClass]="[variant, size]"
+  [class.disabled]="disabled"
+  [disabled]="disabled"
+  (click)="onClick()"
+  [type]="type"
+>
+  {{ text }}
+</button>

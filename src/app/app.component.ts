@@ -4,10 +4,11 @@ import {
   WheelComponent,
   WheelSegmentConfig,
 } from '../components/wheel/wheel.component';
+import { ButtonComponent } from '../components/button/button.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, WheelComponent],
+  imports: [RouterOutlet, WheelComponent, ButtonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -27,13 +28,13 @@ export class AppComponent {
   wheelConfig: WheelSegmentConfig = {
     segments: [
       ['Car', 1],
-      ['Cellphone', 2],
-      ['Toaster', 3],
-      ['Smarties', 2],
+      ['Cellphone', 3],
+      ['Smarties', 3],
+      ['Toaster', 4],
       ['Car', 1],
-      ['Cellphone', 2],
-      ['Toaster', 3],
-      ['Smarties', 2],
+      ['Cellphone', 3],
+      ['Smarties', 3],
+      ['Toaster', 4],
     ],
     spinDuration: 5000,
   };

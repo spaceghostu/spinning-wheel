@@ -1,6 +1,9 @@
+.root {
+  display: flex;
+  gap: 48px;
+}
+
 .buttons {
-  margin-inline: auto;
-  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;

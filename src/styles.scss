@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #000;
+
+  --wheel-segment-even-color: #fdd835;
+  --wheel-segment-odd-color: #ffa726;
+  --wheel-text-color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #49a1ff;
+    --background-color: #000000;
+    --text-color: #fff;
+
+    --wheel-segment-even-color: #fdd835;
+    --wheel-segment-odd-color: #ffa726;
+    --wheel-text-color: #000;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-color 0.3s;
+}

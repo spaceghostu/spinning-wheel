@@ -1,9 +1,19 @@
-<app-wheel [config]="wheelConfig" (spinEnd)="handleSpinEnd($event)"></app-wheel>
-
-<div class="buttons">
-  <button (click)="spinRandom()">Spin Random</button>
-  <button (click)="spinToSegment('Smarties')">Spin to smarties</button>
-  <button (click)="spinToSegment('Car')">Spin to car</button>
+<div class="root">
+  <div class="buttons">
+    <app-button (click)="spinRandom()" text="Spin Random" variant="solid" />
+    <app-button
+      (click)="spinToSegment('Smarties')"
+      text="Spin to smarties"
+      variant="outlined"
+    />
+    <app-button
+      (click)="spinToSegment('Car')"
+      text="Spin to car"
+      variant="outlined"
+    />
+  </div>
+  <app-wheel
+    [config]="wheelConfig"
+    (spinEnd)="handleSpinEnd($event)"
+  ></app-wheel>
 </div>
-
-<router-outlet />
